@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+/* HTML tags */
+
+body {
+    background: #eee;
+}
+
+
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: left;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+select,input,textarea {
+    padding: 0.5rem;
+}
+
+input[type="text"] {
+    width: 40rem;
+}
+
+input[type="number"] {
+    width: 5rem;
+    text-align: right;
+}
+
+textarea {
+    width: 40rem;
+    min-height: 10vh;
+    resize: none;
+}
+
+/* IDs */
+
+fieldset {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+    align-items: center;
+    justify-items: center;
+    max-width: 60rem;
+}
+
+fieldset label {
+    align-self: start;
+    justify-self: end;
+}
+
+fieldset select,input,textarea {
+    justify-self: start;
+}
+
+#paste-banner {
+    font-size: 5vh;
+    text-align: center;
+}
+
+#data-view {
+    background: #ddd;
+    padding: 1rem;
+    max-height: 50vh;
+    overflow: auto;
+}
+
+#data-view table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+#data-view thead {
+    position: sticky;
+}
+
+#data-view th {
+    color: white;
+    background: grey;
+    border: 1px solid black;
+
+    padding: 0.5rem;
+}
+
+#data-view td {
+    background: white;
+    border: 1px solid black;
+
+    padding: 0.5rem;
+    max-width: 10rem;
+    overflow: hidden;
+}
+
+#help-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#help-popup {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Classes */
+
+.button-bar {
+    margin: 1rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.scrollpane {
+    max-height: 50vh;
+    overflow: auto;
+}
+
+.window {
+    width: 50vw;
+    background: white;
+    border: 1px solid black;
+    padding: 1rem;
+}
+

@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="aimark.css" />
+        <script src="https://cdn.jsdelivr.net/npm/umbrellajs@3.3.3/umbrella.min.js"></script>
+        <script src="aimark.js"></script>
+    </head>
+    <body>
+        <h1>AI marking app</h1>
+        <button type="button" class="help-button" id="help-button">Help</button>
+        <form id="dataform">
+            <h2>Language model configuration</h2>
+            <fieldset id="lm-fieldset">
+                <label for="lm-select">Preset</label>
+                <select id="lm-select"></select>
+                <label for="lm-url-input">Endpoint</label>
+                <input id="lm-url-input" type="text" />
+                <label for="lm-key-input">API key</label>
+                <input id="lm-key-input" type="text" />
+                <label for="lm-model-input">Model</label>
+                <input id="lm-model-input" type="text" />
+            </fieldset>
+
+            <h2>Marking instructions</h2>
+            <fieldset>
+                <label for="markscheme-textarea">Markscheme</label>
+                <textarea id="markscheme-textarea"></textarea>
+                <label for="maxscore-input">Max score</label>
+                <input id="maxscore-input" type="number" value="1" />
+            </fieldset>
+        </form>
+        <h2>Data</h2>
+        <div class="button-bar">
+            <button type="button" id="fromClip-button">Paste data</button>
+            <button type="button" id="toClip-button">Copy data</button>
+        </div>
+        <div id="data-view">
+            <div id="paste-banner" tabindex="0">Paste your data here</div>
+            <table>
+                <thead>
+                    <tr id="data-thead">
+                    </tr>
+                </thead>
+                <tbody id="data-tbody">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="help-popup" class="hidden">
+            <div class="window">
+                <div class="scrollpane">
+                    <h2>AIMark V1.0</h2>
+                    <p>
+                        To set up the language model configuration, you will need to either:
+                    </p>
+                    <ul>
+                        <li>
+                            Set up an account with a OpenAI-compatible API service,
+                            such as 
+                            <a href="https://platform.openai.com">OpenAI</a> itself.
+                        </li>
+                        <li>
+                            Run your own local LLM using something like
+                            <a href="https://ollama.com/">Ollama</a>.
+                        </li>
+                    </ul>
+                    <p>
+                        There are presets for some common API services like ChatGPT but you
+                        will still need your own key.
+                    </p>
+                    <p>
+                        In the markscheme box, write your marking criteria as a list of
+                        sentences, each one on a separate line.
+                        The student is awarded a mark for each sentence which applies
+                        to the work, up to the maximum specified in the <b>max score</b> box.
+                    </p>
+                    <p>
+                        Load your student data by copying a table from a spreadsheet and
+                        pasting it into the data area. On Chrome, you can also click
+                        the <b>paste data</b> button but this may not work on other
+                        browsers.
+                    </p>
+                    <p>
+                        Clicking any of the score buttons at the top of the table columns
+                        will consult the AI in an attempt to score each empty cell in
+                        that column.
+                    </p>
+                    <p>
+                        Clicking the <b>copy data</b> button will copy all the data
+                        in the table, allowing you to paste it back in the spreadsheet.
+                    </p>
+                    <p>
+                        This software is released under the MIT licence.
+                    </p>
+                    <h2>Copyright 2024 by LC</h2>
+                    <p>
+                        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+                    </p>
+                    <p>
+                        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+                    </p>
+                    <p>
+                        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+                    </p>
+                </div>
+                <div class="button-bar">
+                    <button type="button" class="help-button">OK</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
